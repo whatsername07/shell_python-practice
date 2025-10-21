@@ -10,7 +10,7 @@ def main():
             exit()
               
         if ("echo" in command):
-            print(command[5:-0])
+            print(command[5:])
              
         print(f"{command}: command not found")
         main()
