@@ -9,6 +9,9 @@ def main():
         if ("exit" in command):
             exit()
               
+        if "echo" in command:
+             print(command[5, -1])
+        
         print(f"{command}: command not found")
         main()
 
