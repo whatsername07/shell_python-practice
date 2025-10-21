@@ -17,7 +17,8 @@ def main():
         elif ("type" in command and command[5:] not in builtin):
             if os.path.exists(PATH):
                 # list the files in the directory
-                fileList = os.listdir(PATH)
+                fileList = os.path(PATH)
+                fileList = os.listdir(fileList)
                 # if the file is in the directory
                 for i in fileList:
                     if i == command[5:]:
