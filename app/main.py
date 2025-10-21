@@ -2,8 +2,7 @@ import sys
 import os
 
 def main():
-        #PATH = "./bin:./sbin"
-        PATH = os.environ['PATH']
+        PATH = ""
         builtin = ["echo", "exit", "type"]
         sys.stdout.write("$ ")
 
@@ -13,18 +12,12 @@ def main():
             print(command[5:] + " is a shell builtin")
         
         elif ("type" in command and command[5:] not in builtin):
-            for path in PATH.split(":"):
-                absPath = os.path.abspath(path)
-                pathToExe = None
-                if not os.path.exists(absPath):
-                     break#path doesn't exist
-                for file in os.listdir(absPath):#loops through files in current environment path
-                     if file == command[5:].split(" ")[0]:#checks if file equal executable name
-                          pathToExe = absPath + "/" + file
-                          break
-                if pathToExe != None:
-                     break
-            print(command[5:] + " is " + pathToExe )
+            if os.path.exists:
+                fileList = os.listdir(PATH)
+                if command[5:] in fileList:
+                    print(command[5:] + " is " + PATH)
+            else:
+                print(command[5:] + ": not found")
 
         elif ("exit" in command):
             exit()
