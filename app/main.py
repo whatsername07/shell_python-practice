@@ -10,7 +10,7 @@ def main():
         if ("type" in command and command[5:] in builtin):
             print(command[5:] + " is a shell builtin")
         
-        if ("type" in command and command[5:] not in builtin):
+        elif ("type" in command and command[5:] not in builtin):
             print(command[5:] + ": command not found")
 
         elif ("exit" in command):
