@@ -18,7 +18,8 @@ def main():
             if os.path.exists(PATH):
                 # list the files in the directory
                 fileList = os.listdir(PATH)
-                print(fileList)
+                for i in fileList:
+                    print(i)
                 # if the file is in the directory
                 if command[5:] in fileList:                    
                     # print the file and its location
