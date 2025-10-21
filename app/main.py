@@ -8,7 +8,7 @@ def main():
         # Wait for user input
         command = input()
         if ("type" in command):
-            print(command[5:] + "is a shell builtin")
+            print(command[5:] + " is a shell builtin")
         
         elif ("exit" in command):
             exit()
