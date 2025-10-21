@@ -2,7 +2,6 @@ import sys
 import os
 
 def main():
-        PATH = ""
         builtin = ["echo", "exit", "type"]
         sys.stdout.write("$ ")
 
@@ -17,8 +16,7 @@ def main():
         elif ("type" in command and command[5:] not in builtin):
             if os.path.exists(PATH):
                 # list the files in the directory
-                fileList = os.pathsep(PATH)
-                fileList = os.listdir(fileList)
+                fileList = os.listdir(PATH)
                 # if the file is in the directory
                 if command[5:] in fileList:                    
                     # print the file and its location
