@@ -20,7 +20,7 @@ def main():
                 fileList = os.listdir(PATH)
                 # if the file is in the directory
                 for i in fileList:
-                    if i == command[5:]
+                    if i == command[5:]:
                         print(i + " is " + PATH)
                         break
             else:
