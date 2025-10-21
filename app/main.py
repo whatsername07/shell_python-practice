@@ -2,6 +2,7 @@ import sys
 
 
 def main():
+        PATH = ""
         builtin = ["echo", "exit", "type"]
         sys.stdout.write("$ ")
 
