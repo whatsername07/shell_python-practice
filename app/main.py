@@ -14,7 +14,7 @@ def main():
             print(command[5:])
 
         elif (command in builtin):
-             print(command + "is a shell builtin")
+             print(f"{command} is a shell builtin")
         else:     
             print(f"{command}: command not found")
         main()
