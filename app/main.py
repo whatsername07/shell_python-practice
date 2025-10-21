@@ -15,18 +15,16 @@ def main():
         
         # if the input contains 'type' and the second part is not a builtin command
         elif ("type" in command and command[5:] not in builtin):
-            if os.path.exists(PATH):
-                # list the files in the directory
-                fileList = os.path(PATH)
-                fileList = os.listdir(fileList)
-                # if the file is in the directory
-                for i in fileList:
-                    if i == command[5:]:
-                        print(i + " is " + PATH)
-                        break
+            command_name = command[5:]
+            path_env = os.environ.get("PATH", "")
+            directories = path_env.split(":")
+            for directory in directories:
+                full_path = os.path.join(directory, command_name)
+                if os.path.exists(full_path) and os.access(full_path, os.X_OK):
+                     print(f"{command_name} is {full_path}")
+
             else:
-                # print that the file is not found
-                print(command[5:] + ": not found")
+                print(command_name + ": not found")
 
         elif ("exit" in command):
             exit()
