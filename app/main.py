@@ -12,7 +12,6 @@ def main():
         if ("echo" in command):
             print(command[5:])
              
-        print(f"{command}: command not found")
         main()
 
 
