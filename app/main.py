@@ -18,10 +18,14 @@ def main():
             if os.path.exists(PATH):
                 # list the files in the directory
                 fileList = os.listdir(PATH)
+                print(fileList)
                 # if the file is in the directory
                 if command[5:] in fileList:                    
                     # print the file and its location
                     print(command[5:] + " is " + PATH)
+                else:
+                    # print that the file is not found
+                    print(command[5:] + ": not found")
             else:
                 # print that the file is not found
                 print(command[5:] + ": not found")
