@@ -8,9 +8,11 @@ def main():
         command = input()
         if ("end" in command) and ("0" in command):
             return("success")
+            exit()
         
         if ("end" in command) and ("1" in command):
-             return("error")
+            return("error")
+            exit()
               
         print(f"{command}: command not found")
         main()
