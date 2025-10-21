@@ -15,12 +15,13 @@ def main():
         
         # if the input contains 'type' and the second part is not a builtin command
         elif ("type" in command and command[5:] not in builtin):
-            # list the files in the directory
-            fileList = os.listdir(PATH)
-            # if the file is in the directory
-            if command[5:] in fileList:                    
-                # print the file and its location
-                print(command[5:] + " is " + PATH)
+            if os.path.exists(PATH):
+                # list the files in the directory
+                fileList = os.listdir(PATH)
+                # if the file is in the directory
+                if command[5:] in fileList:                    
+                    # print the file and its location
+                    print(command[5:] + " is " + PATH)
             else:
                 # print that the file is not found
                 print(command[5:] + ": not found")
