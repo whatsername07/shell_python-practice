@@ -6,13 +6,8 @@ def main():
 
         # Wait for user input
         command = input()
-        if ("exit" in command) and (command[-1]== "0"):
-
-              exit()
-        
-        if ("exit" in command) and (command[-1]== "1"):
-
-              exit()
+        if ("exit" in command):
+            exit()
               
         print(f"{command}: command not found")
         main()
