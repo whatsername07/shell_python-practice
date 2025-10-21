@@ -7,14 +7,15 @@ def main():
 
         # Wait for user input
         command = input()
-        if ("exit" in command):
+        if ("type" in command):
+            print(command[5:] + "is a shell builtin")
+        
+        elif ("exit" in command):
             exit()
               
         elif ("echo" in command):
             print(command[5:])
-
-        elif ("type" in command):
-             print(command[5:] + "is a shell builtin")
+        
         else:     
             print(f"{command}: command not found")
         main()
