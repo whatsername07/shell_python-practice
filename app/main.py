@@ -11,7 +11,8 @@ def main():
             print(command[5:] + " is a shell builtin")
         
         elif ("type" in command and command[5:] not in builtin):
-            print(command[5:] + ": not found")
+            if command[5:] in PATH:
+                print(command[5:] + " is " + PATH )
 
         elif ("exit" in command):
             exit()
