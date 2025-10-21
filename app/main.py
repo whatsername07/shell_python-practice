@@ -2,7 +2,7 @@ import sys
 
 
 def main():
-        builtin = ["echo", "exit"]
+        builtin = ["echo", "exit", "type"]
         sys.stdout.write("$ ")
 
         # Wait for user input
