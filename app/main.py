@@ -2,6 +2,7 @@ import sys
 import os
 
 def main():
+        PATH = ""
         builtin = ["echo", "exit", "type"]
         sys.stdout.write("$ ")
 
@@ -18,12 +19,10 @@ def main():
                 # list the files in the directory
                 fileList = os.listdir(PATH)
                 # if the file is in the directory
-                if command[5:] in fileList:                    
-                    # print the file and its location
-                    print(command[5:] + " is " + PATH)
-                else:
-                    # print that the file is not found
-                    print(command[5:] + ": not found")
+                for i in fileList:
+                    if i == command[5:]
+                        print(i + " is " + PATH)
+                        break
             else:
                 # print that the file is not found
                 print(command[5:] + ": not found")
