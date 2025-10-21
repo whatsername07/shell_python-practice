@@ -6,13 +6,13 @@ def main():
 
         # Wait for user input
         command = input()
-        if ("end" in command) and (command[-1] == "0"):
-            return("0")
-            exit()
+        if ("exit" in command) and (command[-1]== "0"):
+              print("success")
+              exit()
         
-        if ("end" in command) and (command[-1] == "1"):
-            return("1")
-            exit()
+        if ("exit" in command) and (command[-1]== "1"):
+              print("error")
+              exit()
               
         print(f"{command}: command not found")
         main()
