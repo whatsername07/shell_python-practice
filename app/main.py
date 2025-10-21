@@ -13,8 +13,8 @@ def main():
         elif ("echo" in command):
             print(command[5:])
 
-        elif (command in builtin):
-             print(f"{command} is a shell builtin")
+        elif ("type" in command):
+             print(command[5:] + "is a shell builtin")
         else:     
             print(f"{command}: command not found")
         main()
