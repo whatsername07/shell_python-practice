@@ -3,8 +3,10 @@ import os
 import subprocess
 
 def main():
-        PATH = ""
-        builtin = ["echo", "exit", "type"]
+    PATH = ""
+    builtin = ["echo", "exit", "type"]
+    while True:
+        
         sys.stdout.write("$ ")
 
         command = input()
@@ -20,27 +22,17 @@ def main():
                 full_path = os.path.join(directory, command_name)
                 if os.path.exists(full_path) and os.access(full_path, os.X_OK):
                     print(f"{command_name} is {full_path}")
-                    main()
+                    continue
             else:
                 print(command_name + ": not found")
 
         elif (command not in builtin):
             commandList = command.split()
             custom_exe = commandList[0]
-            if len(commandList) != 1:
-                #print("Program was passed "+ str((len(commandList))) + " args (including program name)." )
-                #print("Arg #0 (program name): " + commandList[0])
-                x=1
-                while x != len(commandList):
-                    #print("Arg #"+str(x)+": "+commandList[x])
-                    x += 1
-                subprocess.run(commandList)
-    
-            elif commandList == custom_exe:
-                #print ("Program was passed 1 args (including program name)")
-                subprocess.run([commandList[0]])
-            else:
+            if len(commandList) == 0:
                 print(f"{custom_exe}: command not found")
+                continue
+            subprocess.run(commandList)
                 
         elif ("exit" in command):
             exit()
@@ -50,7 +42,6 @@ def main():
         
         else:     
             print(f"{command}: command not found")
-        main()
 
 
 if __name__ == "__main__":
