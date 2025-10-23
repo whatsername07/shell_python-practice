@@ -51,6 +51,7 @@ def main():
                     argsLeft -= 1    
                 print("Program was passed "+ str((len(commandList))) + " args (including program name)." )
                 print("Arg #0 (program name): " + commandList[0])
+                x=1
                 while x != len(commandList):
                     print("Arg #"+str(x)+": "+commandList[x])
                     x+=1
