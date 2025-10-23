@@ -55,7 +55,8 @@ def main():
                 while x != len(commandList):
                     print("Arg #"+str(x)+": "+commandList[x])
                     x+=1
-                subprocess.run([custom_exe, args])
+                output = subprocess.run(commandList, shell=True)
+                print(f'{output.stdout}')
             
 
         elif ("exit" in command):
