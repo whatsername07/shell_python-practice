@@ -20,12 +20,12 @@ def main():
             directories = path_env.split(":")
             for directory in directories:
                 full_path = os.path.join(directory, command_name)
-                if os.path.exists(full_path) and os.access(full_path, os.X_OK):
-                    print(f"{command_name} is {full_path}")
-                    continue
-                else:
-                    print(command_name + ": not found")
-                    continue
+            if os.path.exists(full_path) and os.access(full_path, os.X_OK):
+                print(f"{command_name} is {full_path}")
+                continue
+            else:
+                print(command_name + ": not found")
+                continue
 
         elif (command not in builtin):
             commandList = command.split()
