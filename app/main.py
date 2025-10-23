@@ -49,7 +49,7 @@ def main():
                     i = 0
                     args.append(commandList[i])
                     argsLeft -= 1
-                print("Program was passed "+ str((len(commandList)+1)) + "args (including program name)." )
+                print("Program was passed "+ str((len(commandList))) + " args (including program name)." )
                 subprocess.run(custom_exe, args)
             
 
