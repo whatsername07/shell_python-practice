@@ -43,12 +43,7 @@ def main():
                 print ("Program was passed 1 args (including program name)")
                 subprocess.run([commandList[0]])
             else:
-                args = []
-                argsLeft = len(commandList)-1
-                while argsLeft != 0:
-                    i = 0
-                    args.append(commandList[i])
-                    argsLeft -= 1    
+ 
                 print("Program was passed "+ str((len(commandList))) + " args (including program name)." )
                 print("Arg #0 (program name): " + commandList[0])
                 x=1
