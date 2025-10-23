@@ -41,7 +41,7 @@ def main():
             custom_exe = commandList[0]
             if len(commandList) == 1:
                 print ("Program was passed 1 args (including program name)")
-                subprocess.run(commandList[0])
+                subprocess.run([commandList[0]])
             else:
                 args = []
                 argsLeft = len(commandList)-1
@@ -55,7 +55,7 @@ def main():
                 while x != len(commandList):
                     print("Arg #"+str(x)+": "+commandList[x])
                     x+=1
-                subprocess.run(custom_exe, args)
+                subprocess.run([custom_exe, args])
             
 
         elif ("exit" in command):
