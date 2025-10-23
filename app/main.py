@@ -38,10 +38,17 @@ def main():
 
         elif (command not in builtin):
             commandList = command.split()
+            originalList = commandList
             custom_exe = commandList[0]
             if len(commandList) != 1:
+                print("Program was passed "+ str((len(commandList))) + " args (including program name)." )
+                print("Arg #0 (program name): " + commandList[0])
+                x=1
+                while x != len(commandList):
+                    print("Arg #"+str(x)+": "+commandList[x])
+                    x += 1
                 subprocess.run(commandList, shell=True)
-            elif commandList == custom_exe:
+            elif originalList == custom_exe:
                 print ("Program was passed 1 args (including program name)")
                 subprocess.run([commandList[0]])
             else:
