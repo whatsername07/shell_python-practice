@@ -7,38 +7,25 @@ def main():
         builtin = ["echo", "exit", "type"]
         sys.stdout.write("$ ")
 
-        # Wait for user input
         command = input()
-        # if the input contains 'type' and the word after type is a builtin command
         if ("type" in command and command[5:] in builtin):
-            # output that it is a builtin command
             print(command[5:] + " is a shell builtin")
         
-        # if the input contains 'type' and the second part is not a builtin command
+   
         elif ("type" in command and command[5:] not in builtin):
-            # assigns a variable to the desired command name
             command_name = command[5:]
-            # assigns the current directory to the variable path_env
             path_env = os.environ.get("PATH", "")
-            # splits the directory into a list of individual files separated by colons
             directories = path_env.split(":")
-            # loops through every file in the directory
             for directory in directories:
-                # joins the user's command input to the current file in the directory
                 full_path = os.path.join(directory, command_name)
-                # checks the conjoined path exists and that is can be executed
                 if os.path.exists(full_path) and os.access(full_path, os.X_OK):
-                    # outputs file location in directory
                     print(f"{command_name} is {full_path}")
                     main()
-            # if not
             else:
-                # command cannot be found
                 print(command_name + ": not found")
 
         elif (command not in builtin):
             commandList = command.split()
-            originalList = commandList
             custom_exe = commandList[0]
             if len(commandList) != 1:
                 print("Program was passed "+ str((len(commandList))) + " args (including program name)." )
@@ -48,7 +35,7 @@ def main():
                     print("Arg #"+str(x)+": "+commandList[x])
                     x += 1
                 subprocess.run(commandList, shell=True)
-            elif originalList == custom_exe:
+            elif commandList == custom_exe:
                 print ("Program was passed 1 args (including program name)")
                 subprocess.run([commandList[0]])
             else:
