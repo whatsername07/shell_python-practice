@@ -25,6 +25,7 @@ def main():
                     continue
             else:
                 print(command_name + ": not found")
+                continue
 
         elif (command not in builtin):
             commandList = command.split()
