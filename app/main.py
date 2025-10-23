@@ -48,8 +48,12 @@ def main():
                 while argsLeft != 0:
                     i = 0
                     args.append(commandList[i])
-                    argsLeft -= 1
+                    argsLeft -= 1    
                 print("Program was passed "+ str((len(commandList))) + " args (including program name)." )
+                print("Arg #"+str(x)+" (program name): " + commandList[0])
+                for x in len(commandList):
+                    x+=1
+                    print("Arg #"+x+": "+commandList[x])
                 subprocess.run(custom_exe, args)
             
 
