@@ -34,7 +34,7 @@ def main():
                 while x != len(commandList):
                     #print("Arg #"+str(x)+": "+commandList[x])
                     x += 1
-                subprocess.run(commandList, shell=True)
+                subprocess.run(commandList)
     
             elif commandList == custom_exe:
                 #print ("Program was passed 1 args (including program name)")
