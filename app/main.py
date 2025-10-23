@@ -28,20 +28,13 @@ def main():
                 continue
 
         elif (command not in builtin):
-            # to-do list: check the file exists
+            # find if the file exists and then run if it does
             commandList = command.split()
             custom_exe = commandList[0]
             if len(commandList) == 0:
                 print(f"{custom_exe}: command not found")
                 continue
-            directories = command.split(":")
-            for directory in directories:
-                full_path = os.path.join(directory, commandList[0])
-                if os.path.exists(full_path) and os.access(full_path, os.X_OK):
-                    subprocess.run(commandList)
-                else: 
-                    print(commandList[0] + ": command not found")
-                continue
+            subprocess.run(commandList)
                 
         elif ("exit" in command):
             exit()
