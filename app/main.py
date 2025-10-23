@@ -36,11 +36,11 @@ def main():
                 continue
             directories = command.split(":")
             for directory in directories:
-                full_path = os.path.join(directory, command_name)
+                full_path = os.path.join(directory, commandList[0])
                 if os.path.exists(full_path) and os.access(full_path, os.X_OK):
                     subprocess.run(commandList)
                 else: 
-                    print(command_name + ": command not found")
+                    print(commandList[0] + ": command not found")
                 continue
                 
         elif ("exit" in command):
