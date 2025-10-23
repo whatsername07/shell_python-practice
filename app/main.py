@@ -23,8 +23,9 @@ def main():
                 if os.path.exists(full_path) and os.access(full_path, os.X_OK):
                     print(f"{command_name} is {full_path}")
                     break
-            print(command_name + ": not found")
-            continue
+            else: 
+                print(command_name + ": not found")
+                continue
 
         elif (command not in builtin):
             commandList = command.split()
