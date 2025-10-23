@@ -34,7 +34,7 @@ def main():
             if len(commandList) == 0:
                 print(f"{custom_exe}: command not found")
                 continue
-            if os.path.exists(commandList[0]) and os.access(full_path, os.X_OK):
+            if os.path.exists(commandList[0]):
                 subprocess.run(commandList)
                 
         elif ("exit" in command):
