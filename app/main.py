@@ -46,8 +46,7 @@ def main():
                 while x != len(commandList):
                     print("Arg #"+str(x)+": "+commandList[x])
                     x += 1
-                output = subprocess.run(commandList, shell=True)
-                print(f'{output.stdout}')
+                subprocess.run(commandList, shell=True)
             else:
                 print ("Program was passed 1 args (including program name)")
                 subprocess.run([commandList[0]])
