@@ -47,6 +47,9 @@ def main():
                     print("Arg #"+str(x)+": "+commandList[x])
                     x += 1
                 subprocess.run(commandList, shell=True)
+            elif commandList == custom_exe:
+                print ("Program was passed 1 args (including program name)")
+                subprocess.run([commandList[0]])
             else:
                 print(f"{custom_exe}: command not found")
                 
