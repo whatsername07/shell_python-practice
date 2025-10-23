@@ -34,6 +34,7 @@ def main():
             if len(commandList) == 0:
                 print(f"{custom_exe}: command not found")
                 continue
+            directories = command.split(":")
             for directory in directories:
                 full_path = os.path.join(directory, command_name)
                 if os.path.exists(full_path) and os.access(full_path, os.X_OK):
