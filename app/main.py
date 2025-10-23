@@ -40,6 +40,7 @@ def main():
             commandList = command.split()
             custom_exe = commandList[0]
             if commandList.len() == 1:
+                print ("Program was passed 1 args (including program name)")
                 subprocess.run(commandList[0])
             else:
                 args = []
@@ -48,6 +49,7 @@ def main():
                     i = 0
                     args.append(commandList[i])
                     argsLeft -= 1
+                print("Program was passed "+ (commandList.len()+1) + "args (including program name)." )
                 subprocess.run(custom_exe, args)
             
 
