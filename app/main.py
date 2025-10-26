@@ -13,6 +13,11 @@ def main():
         if ("type" in command and command[5:] in builtin):
             print(command[5:] + " is a shell builtin")
         
+        elif ("exit" in command):
+            exit()
+
+        elif ("echo" in command):
+            print(command[5:])
    
         elif ("type" in command and command[5:] not in builtin):
             command_name = command[5:]
@@ -38,12 +43,6 @@ def main():
                 subprocess.run(commandList)
             except:
                 print(f"{command}: command not found")
-                
-        elif ("exit" in command):
-            exit()
-              
-        elif ("echo" in command):
-            print(command[5:])
         
         else:     
             print(f"{command}: command not found")
