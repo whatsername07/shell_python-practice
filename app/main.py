@@ -4,7 +4,7 @@ import subprocess
 
 def main():
     PATH = ""
-    builtin = ["echo", "exit", "type"]
+    builtin = ["echo", "exit", "type", "pwd"]
     while True:
         
         sys.stdout.write("$ ")
@@ -18,6 +18,9 @@ def main():
 
         elif ("echo" in command):
             print(command[5:])
+
+        elif (command == "pwd"):
+            print(PATH)
    
         elif ("type" in command and command[5:] not in builtin):
             command_name = command[5:]
@@ -33,16 +36,13 @@ def main():
                 continue
 
         elif (command not in builtin):
-            # find if the file exists and then run if it does
             commandList = command.split()
             custom_exe = commandList[0]
-            if len(commandList) == 0:
-                print(f"{custom_exe}: command not found")
-                continue
             try:
                 subprocess.run(commandList)
             except:
                 print(f"{command}: command not found")
+            continue
         
         else:     
             print(f"{command}: command not found")
