@@ -20,7 +20,7 @@ def main():
             print(command[5:])
 
         elif (command == "pwd"):
-            path_env = os.environ.get()
+            path_env = os.environ.get("PATH", "")
             print(path_env)
    
         elif ("type" in command and command[5:] not in builtin):
