@@ -24,7 +24,7 @@ def main():
             print(currentPath)
 
         elif ("cd" in command):
-            currentPath = currentPath + command[3:]
+            currentPath = command[3:]
    
         elif ("type" in command and command[5:] not in builtin):
             command_name = command[5:]
