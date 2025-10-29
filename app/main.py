@@ -4,7 +4,8 @@ import subprocess
 
 def main():
     PATH = ""
-    builtin = ["echo", "exit", "type", "pwd"]
+    builtin = ["echo", "exit", "type", "pwd", "cd"]
+    currentPath = os.getcwd()
     while True:
         
         sys.stdout.write("$ ")
@@ -20,8 +21,10 @@ def main():
             print(command[5:])
 
         elif (command == "pwd"):
-            PATH = os.getcwd()
-            print(PATH)
+            print(currentPath)
+
+        elif (command == "cd"):
+            currentPath = currentPath + command[3:]
    
         elif ("type" in command and command[5:] not in builtin):
             command_name = command[5:]
