@@ -24,7 +24,10 @@ def main():
             print(currentPath)
 
         elif ("cd" in command):
-            currentPath = command[3:]
+            if (os.path.exists(command[3:])):
+                currentPath = command[3:]
+            else:
+                print("cd: "+command[3:]+": No such file or directory")
    
         elif ("type" in command and command[5:] not in builtin):
             command_name = command[5:]
