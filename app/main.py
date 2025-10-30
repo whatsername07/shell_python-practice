@@ -23,6 +23,13 @@ def main():
         elif (command == "pwd"):
             print(currentPath)
 
+        elif ("cd" in command and command[3:5] == "./"):
+            pathCheck = currentPath + command[4:]
+            if (os.path.exists(pathCheck)):
+                currentPath = pathCheck
+            else:
+                print("cd: "+pathCheck+": No such file or directory")
+
         elif ("cd" in command):
             if (os.path.exists(command[3:])):
                 currentPath = command[3:]
